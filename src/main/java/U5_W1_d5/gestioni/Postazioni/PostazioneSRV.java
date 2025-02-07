@@ -9,14 +9,14 @@ import java.util.List;
 public class PostazioneSRV {
 
     @Autowired
-    PostazioneDAO postazioneDAO;
+    PostazioneRepo postazioneRepo;
 
     public void save(Postazione postazione){
-        postazioneDAO.save(postazione);
+        postazioneRepo.save(postazione);
     }
 
     public List<Postazione> FindAllElement(){
-        return  postazioneDAO.findAll();
+        return  postazioneRepo.findAll();
     }
 
     public void findByIdAndUpdate(long Id, Postazione postazione) {
@@ -25,7 +25,7 @@ public class PostazioneSRV {
         found.setDescrizione(postazione.getDescrizione());
         found.setEdificio(postazione.getEdificio());
         found.setNumeroMassimoOccupanti(postazione.getNumeroMassimoOccupanti());
-        postazioneDAO.save(found);
+        postazioneRepo.save(found);
     }
 
     public void findByIdAndUpdateTru(long Id, Postazione postazione) {
@@ -34,14 +34,14 @@ public class PostazioneSRV {
         found.setDescrizione(postazione.getDescrizione());
         found.setEdificio(postazione.getEdificio());
         found.setNumeroMassimoOccupanti(postazione.getNumeroMassimoOccupanti());
-        postazioneDAO.save(found);
+        postazioneRepo.save(found);
     }
 
     public Postazione findById(long id){
-        return postazioneDAO.findById(id).orElseThrow(() -> new IllegalArgumentException("Postazione not found"));
+        return postazioneRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Postazione not found"));
     }
 
     public List<Postazione> findPostazioni(long id){
-        return postazioneDAO.findByEdificioId(id);
+        return postazioneRepo.findByEdificioId(id);
     }
 }

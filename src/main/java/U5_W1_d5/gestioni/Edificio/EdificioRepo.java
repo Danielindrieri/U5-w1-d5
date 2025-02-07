@@ -7,6 +7,6 @@ import java.util.List;
 
 
 @Repository
-public interface EdificioDAO extends JpaRepository<Edificio, Long> {
+public interface EdificioRepo extends JpaRepository<Edificio, Long> {
     List<Edificio> findByCittaIgnoreCase(String citta);
 }

@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Repository
-public interface PrenotazioneDAO extends JpaRepository<Prenotazione, Long> {
+public interface PrenotazioneRepo extends JpaRepository<Prenotazione, Long> {
     List<Prenotazione> findByUtenteAndData(Utente utente, LocalDate data);
     List<Prenotazione> findByPostazioneAndData(Postazione postazione, LocalDate data);
     List<Prenotazione> findByUtente(Utente utente);

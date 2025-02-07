@@ -9,13 +9,13 @@ import java.util.List;
 public class EdificioSRV {
 
     @Autowired
-    EdificioDAO edificioDAO;
+    EdificioRepo edificioRepo;
 
     public void save(Edificio edificio){
-        edificioDAO.save(edificio);
+        edificioRepo.save(edificio);
     }
 
     public List<Edificio> findByCitta(String citta){
-        return edificioDAO.findByCittaIgnoreCase(citta);
+        return edificioRepo.findByCittaIgnoreCase(citta);
     }
 }

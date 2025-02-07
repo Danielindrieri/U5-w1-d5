@@ -12,26 +12,26 @@ import java.util.List;
 public class PrenotazioneSRV {
 
     @Autowired
-    PrenotazioneDAO prenotazioneDAO;
+    PrenotazioneRepo prenotazioneRepo;
 
     public void save(Prenotazione prenotazione){
-        prenotazioneDAO.save(prenotazione);
+        prenotazioneRepo.save(prenotazione);
 
     }
 
     public List<Prenotazione> findByUtenteAndData(Utente utente, LocalDate data){
-        return prenotazioneDAO.findByUtenteAndData(utente, data);
+        return prenotazioneRepo.findByUtenteAndData(utente, data);
     }
 
     public List<Prenotazione> findByPostazione(Postazione postazione, LocalDate data){
-        return prenotazioneDAO.findByPostazioneAndData(postazione, data);
+        return prenotazioneRepo.findByPostazioneAndData(postazione, data);
     }
 
     public List<Prenotazione> findByData(LocalDate data){
-        return prenotazioneDAO.findByData(data);
+        return prenotazioneRepo.findByData(data);
     }
 
     public List<Prenotazione> findByUtente(Utente utente){
-        return prenotazioneDAO.findByUtente(utente);
+        return prenotazioneRepo.findByUtente(utente);
     }
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PostazioneDAO extends JpaRepository<Postazione, Long> {
+public interface PostazioneRepo extends JpaRepository<Postazione, Long> {
     List<Postazione> findByEdificioId(long id);
 }
